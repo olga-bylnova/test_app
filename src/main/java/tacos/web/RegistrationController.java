@@ -1,4 +1,3 @@
-/*
 package tacos.web;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,7 +9,7 @@ import tacos.data.UserRepository;
 import tacos.security.RegistrationForm;
 
 @Controller
-@RequestMapping("/registration")
+@RequestMapping("/register")
 public class RegistrationController {
     private UserRepository userRepo;
     private PasswordEncoder passwordEncoder;
@@ -31,4 +30,3 @@ public class RegistrationController {
         return "redirect:/login";
     }
 }
-*/

@@ -1,4 +1,3 @@
-/*
 package tacos.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,4 +27,3 @@ public class UserRepositoryUserDetailsService implements UserDetailsService {
                 "User '" + username + "' not found");
     }
 }
-*/

@@ -1,4 +1,3 @@
-/*
 
 package tacos.security;
 
@@ -16,7 +15,7 @@ import org.springframework.security.crypto.password.StandardPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
+@Autowired
     private UserDetailsService userDetailsService;
 
     @Bean
@@ -41,9 +40,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/**").access("permitAll")
 
                 .and()
-                .formLogin()
-                .loginPage("/login");
+                    .formLogin()
+                        .loginPage("/login")
+                            .defaultSuccessUrl("/design")
+
+                .and()
+                    .logout()
+                        .logoutSuccessUrl("/");
     }
+
+    /*@Override
+    protected void configure(AuthenticationManagerBuilder auth)
+            throws Exception {
+        auth
+                .inMemoryAuthentication()
+                .withUser("buzz")
+                .password("infinity")
+                .authorities("ROLE_USER")
+                .and()
+                .withUser("woody")
+                .password("bullseye")
+                .authorities("ROLE_USER");
+    }*/
+
 }
 
-*/

@@ -1,4 +1,3 @@
-/*
 package tacos.security;
 
 import lombok.Data;
@@ -22,4 +21,3 @@ public class RegistrationForm {
                 fullname, street, city, state, zip, phone);
     }
 }
-*/

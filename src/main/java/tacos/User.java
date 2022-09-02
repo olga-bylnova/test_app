@@ -1,4 +1,3 @@
-/*
 package tacos;
 
 import lombok.AccessLevel;
@@ -10,16 +9,15 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
 @RequiredArgsConstructor
+@Table(name="taco_user")
 public class User implements UserDetails {
-    private static final long serialVersionUID = 1L;
-
     @Id
     @SequenceGenerator(
             name = "user_sequence",
@@ -41,7 +39,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override
@@ -64,4 +62,3 @@ public class User implements UserDetails {
         return true;
     }
 }
-*/
